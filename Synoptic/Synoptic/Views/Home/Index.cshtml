@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+if (ViewBag.Mode == "extract")
+{
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success" role="alert">
+            Your Extracted Text: @ViewBag.Message
+        </div>
+    }
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+<form method="post" enctype="multipart/form-data" asp-controller="Home">
+    <div class="form-group">
+        <label for="image">Bitmap Image</label>
+        <input accept=".bmp" type="file" name="Image" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="textToInject">Text</label>
+        <input type="text" name="Text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="textToInject">Password</label>
+        <input type="password" name="Password" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <button type="submit" value="hide" formaction="Hide" class="btn btn-primary">Hide</button>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" value="extract" formaction="Extract" class="btn btn-primary">Extract</button>
+    </div>
+</form>
