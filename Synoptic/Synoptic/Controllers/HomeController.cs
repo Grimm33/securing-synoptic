@@ -122,7 +122,7 @@ namespace Synoptic.Controllers
                 }
                 catch (Exception)
                 {
-                    error = "File failed to be added";
+                    error = "Wrong password";
                 }
             }
 

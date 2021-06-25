@@ -19,6 +19,7 @@ namespace Synoptic
                 return BitConverter.ToString(data).Replace("-", "").Substring(0, 16);
             }
         }
+
         public static string Encrypt(string key, string text)
         {
             byte[] iv = new byte[16];
